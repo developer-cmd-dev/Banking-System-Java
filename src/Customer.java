@@ -6,6 +6,7 @@ public class Customer {
    final String address;
    final int accountNo;
    final double initalAmount;
+   private double totalAmount;
 
     public Customer(String customerName, int age,String address,double initalAmount){
         this.customerName = customerName;
@@ -13,6 +14,7 @@ public class Customer {
         this.address = address;
         this.accountNo = (int) Math.floor(Math.random()*100000);
         this.initalAmount = initalAmount;
+        this.totalAmount = initalAmount;
     }
 
     public String getCustomerName() {
@@ -29,5 +31,16 @@ public class Customer {
 
     public int getAccountNo() {
         return accountNo;
+    }
+
+    public double getTotalAmount(){
+        return totalAmount;
+    }
+
+    public void deposit(double amount){
+        totalAmount+=amount;
+    }
+    public void withDraw(double amount){
+        totalAmount-=amount;
     }
 }
