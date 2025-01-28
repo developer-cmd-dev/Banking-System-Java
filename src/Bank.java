@@ -100,6 +100,15 @@ public class Bank {
                         }
                     }
 
+                } else if (choice ==4) {
+                    System.out.println("Enter your A/c no: ");
+                    int acNo = sc.nextInt();
+                    getCustomer = getCusomerDetail(acNo);
+                    if(getCustomer !=null){
+                        System.out.println("Your current balance is: "+getCustomer.getTotalAmount());
+                    }else{
+                        System.out.println("Wrong A/C no ! please try again.");
+                    }
                 } else if(choice ==5){
                     break;
                 }
